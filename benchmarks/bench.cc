@@ -362,6 +362,7 @@ bench_runner::run()
 #endif
   }
 
+  cout << "runtime: " << elapsed_sec << " sec" << endl;
   // output for plotting script
   cout << agg_throughput << " "
        << agg_persist_throughput << " "
