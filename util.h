@@ -322,6 +322,22 @@ format_list(ForwardIterator begin, ForwardIterator end)
   return ss.str();
 }
 
+template <typename ForwardIterator>
+std::string format_list2(ForwardIterator begin, ForwardIterator end) {
+  std::ostringstream ss;
+  ss << "[";
+  bool first = true;
+  while (begin != end) {
+    if (!first)
+      ss << ", ";
+    first = false;
+    ss << begin->second;
+    ++begin;
+  }
+  ss << "]";
+  return ss.str();
+}
+
 /**
  * Returns the lowest position p such that p0+p != p1+p.
  */
